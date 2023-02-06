@@ -1,0 +1,11 @@
+version: '3'
+services:
+  node-app:
+    build: .
+    #both envn here are sharing the same environment and same port
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+    # env_file:     This is for multiple env file tha have multiple port
+    #   - ./.env
