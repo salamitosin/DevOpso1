@@ -5,9 +5,9 @@ const app = express()
 const appRoute = require ('./routes/router')
 app.use(express.json());
 
-app.get('/', (req, res) =>{
-  res.send("Hello Route")
-});
+// app.get('/', (req, res) =>{
+//   res.send("Hello Route")
+// });
 app.use('/api', appRoute);
 
 const port = process.env.PORT || 3000
