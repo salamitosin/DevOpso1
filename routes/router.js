@@ -3,7 +3,7 @@ const route = express.Router();
 const data = require("../data/data.json")
 
 route.get('/', (req, res )=>{
-    res.send(data)
+    res.send("Hello world")
 });
 
 module.exports = route;
