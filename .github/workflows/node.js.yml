@@ -17,3 +17,13 @@ jobs:
       run: npm install
     - name: Run Test
       run: npm test
+
+  deploy: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger deployment
+      uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
+      with:
+        serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+        apiKey: ${{ secrets.RENDER_API_KEY }}
+        multiple: false #optional, default true
