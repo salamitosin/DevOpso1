@@ -1,18 +1,27 @@
-const { response } = require("express");
-const express        = require("express");
 const request   = require("supertest");
-const appRoute     = require('../routes/router')
+const app = require ('../app');
 
+// /// For user that recycle in the db
+// const User = require ('db path')
 
+// Test Case For User Login
+// const user1 = {
+//     name: "test",
+//     email: "test@123.com",
+//     password: "12345"
+// }
 
-const app = express();
+// beforeEach(async()=>{
+//     await User.pathName.i.e deletMany({})
+        // await User(user1).save()
+// })
 
-app.use(express.json());
-
-app.get('/', (req, res) =>{
-    res.send("Hello Route")
-  });
-app.use('/api', appRoute);
+// test("Should login for a user", async ()=>{
+//     await (await request(app).post("/api")).send({
+//         email: user1.email,
+//         passworld: user1.passworld
+//     })
+// })
 
 // //
 // // Mocking an Api that is a third party api
