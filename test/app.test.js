@@ -14,6 +14,12 @@ app.get('/', (req, res) =>{
   });
 app.use('/api', appRoute);
 
+// //
+// // Mocking an Api that is a third party api
+// 1. import the api
+// 2. mock the third party api
+// jest.mock('the souurce dir of the api', ()=>())
+
 describe("Integration function for our api's", ()=>{
 
     // Intergrated test for Get APi
@@ -34,7 +40,7 @@ describe("Integration function for our api's", ()=>{
     });
 
     //Intergrated test for Post APi
-    it('Post /api  Success or Failure', async ()=>{
+    it('Post /api  Failure Test', async ()=>{
         const {body, statusCode} = await request(app).post('/api').send({
             name: "",
             author: "Paul Smith"
@@ -52,6 +58,22 @@ describe("Integration function for our api's", ()=>{
                 }
             ]
     });
-
     })
+
+//     it(" Put /api for failure", async ()=>{
+//         const { body, statusCode} = await request(app).put('/api').send({
+//             name: "",
+//             author: "Saul Smith"
+//         })
+//        console.log(body)
+//        expect(statusCode).toBe(404);
+// NOTE: console.log the body to check expected
+//        expect(body).toEqual({
+//             error : true,
+//             message: "Book not found"
+//        })
+
+//     })
+
+// NOTE: console.log the body to check expected
 });
